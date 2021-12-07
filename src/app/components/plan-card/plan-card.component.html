@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>{{plan?.name}}</h1>
+    <ol>
+        <li *ngFor="let bulet of plan?.consList">{{bulet}}.</li>
+    </ol>
+
+    <p>Price: {{plan?.price}} EUR</p>
+    <button>Pick a plan</button>
+</div>
