@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Plan } from 'src/app/models/plan';
+// import { Plan } from 'src/app/models/plan';
 import { PlanService } from 'src/app/services/plan.service';
 
 @Component({
@@ -8,11 +8,11 @@ import { PlanService } from 'src/app/services/plan.service';
   styleUrls: ['./all-plans.component.scss']
 })
 export class AllPlansComponent implements OnInit {
-  public personalPlans!: Plan [];
+//   public personalPlans!: Plan [];
   constructor(private planService: PlanService) { }
 
   ngOnInit(): void {
-    this.personalPlans = this.planService.plansList
+    // this.personalPlans = this.planService.personalPlansList;
   }
 
 }

@@ -1,9 +1,14 @@
 <div class="container">
+    <div class="triangle"
+        *ngIf="plan?.bestOffer"></div>
+    <div class="best"
+        *ngIf="plan?.bestOffer">Best Offer</div>
     <h1>{{plan?.name}}</h1>
-    <ol>
+    <p class="period">{{plan?.period}}</p>
+    <ul>
         <li *ngFor="let bulet of plan?.consList">{{bulet}}.</li>
-    </ol>
+    </ul>
 
     <p>Price: {{plan?.price}} EUR</p>
-    <button>Pick a plan</button>
+    <button>Pick a plan<fa-icon [icon]="faBeer"></fa-icon></button>
 </div>

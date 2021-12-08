@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 5px;
+  background-color: green;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    outline: 1px solid #fff;
+    outline-offset: -3px;
+  }
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  .period {
+    font-weight: 900;
+  }
+  button {
+    align-self: center;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: yellow;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    &:hover {
+      background-color: darkorange;
+      color: #fff;
+      transition: 0.3s ease-in;
+      text-shadow: black 2px 2px 20px;
+      outline: solid 1px #fff;
+    }
+    fa-icon {
+      margin-left: 3px;
+    }
+  }
+  ul {
+    margin-left: 10px;
+  }
+  li {
+    font-style: italic;
+  }
+  .best {
+    color: #fff;
+    position: absolute;
+    top: 23px;
+    right: -1px;
+    transform: rotate(45deg);
+  }
+  .triangle {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    border: 60px solid transparent;
+    border-right-color: #024b47;
+    transform: rotate(135deg);
+  }
+}

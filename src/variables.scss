@@ -1,15 +1,7 @@
+/*FONTS*/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
 
-@import url("./reset.scss");
-@import url("./variables.scss");
-
 $heading-font: ("Oswald", sans-serif);
 $main-font: ("Ubuntu", sans-serif);
-
-body {
-  font-family: $main-font;
-}
-h1 {
-  font-family: $heading-font;
-}
+/*COLORS*/
