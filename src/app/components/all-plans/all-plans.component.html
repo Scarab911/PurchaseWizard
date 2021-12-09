@@ -1,11 +1,16 @@
-<!-- <div class="container">
+<div class="container">
 
     <div class="selections">
-        <div class="tab personal">Personal</div>
-        <div class="tab enterprise">Enterprise</div>
+        <div class="tab personal"
+            (click)="showPersonalTab()">Personal</div>
+        <div class="tab enterprise"
+            (click)="showEnterpriseTab()">Enterprise</div>
     </div>
-    <div class="wrapper">
-        <plan-card *ngFor='let plan of personalPlans'
-            [plan]='plan'></plan-card>
-    </div>
-</div> -->
+
+    <enterprise-plans *ngIf="getEnterpriseTab">
+    </enterprise-plans>
+
+    <personal-plans *ngIf="getPersonalTab">
+    </personal-plans>
+
+</div>

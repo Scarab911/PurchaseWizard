@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { Plan } from 'src/app/models/plan';
-import { PlanService } from 'src/app/services/plan.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'all-plans',
@@ -8,11 +7,39 @@ import { PlanService } from 'src/app/services/plan.service';
   styleUrls: ['./all-plans.component.scss']
 })
 export class AllPlansComponent implements OnInit {
-//   public personalPlans!: Plan [];
-  constructor(private planService: PlanService) { }
+  private enterpriseTab: boolean= false;
+  private personalTab: boolean = true;
+
+  constructor(private router: Router) {
+    
+   }
 
   ngOnInit(): void {
-    // this.personalPlans = this.planService.personalPlansList;
   }
 
+  public showEnterpriseTab(): void {
+    this.enterpriseTab = true;
+    this.personalTab = false;
+  };
+
+  public showPersonalTab(): void {
+    this.personalTab= true;
+    this.enterpriseTab = false;
+  };
+
+  public get getPersonalTab(): boolean {
+    return this.personalTab
+  };
+  public get getEnterpriseTab(): boolean {
+    return this.enterpriseTab
+  };
+  // public isHomeRoute(): boolean {
+  //   return this.router.url === '/'
+  // }
+  // public isPersonalRoute(): boolean {
+  //   return this.router.url === '/personal'
+  // }
+  // public isEnterpriseRoute(): boolean {
+  //   return this.router.url === '/enterprise'
+  // }
 }

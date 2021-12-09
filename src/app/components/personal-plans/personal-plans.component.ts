@@ -3,7 +3,7 @@ import { Plan } from 'src/app/models/plan';
 import { PlanService } from 'src/app/services/plan.service';
 
 @Component({
-  selector: 'app-personal-plans',
+  selector: 'personal-plans',
   templateUrl: './personal-plans.component.html',
   styleUrls: ['./personal-plans.component.scss']
 })
