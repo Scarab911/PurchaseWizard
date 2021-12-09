@@ -7,10 +7,12 @@
             (click)="showEnterpriseTab()">Enterprise</div>
     </div>
 
-    <enterprise-plans *ngIf="getEnterpriseTab">
+    <enterprise-plans class="guest"
+        *ngIf="getEnterpriseTab">
     </enterprise-plans>
 
-    <personal-plans *ngIf="getPersonalTab">
+    <personal-plans class="guest"
+        *ngIf="getPersonalTab">
     </personal-plans>
 
 </div>
