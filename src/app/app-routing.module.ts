@@ -1,22 +1,22 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllPlansComponent } from './components/all-plans/all-plans.component';
-import { EnterprisePlansComponent } from './components/enterprise-plans/enterprise-plans.component';
-import { PersonalPlansComponent } from './components/personal-plans/personal-plans.component';
+import { OrderReviewComponent } from './components/order-review/order-review.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: AllPlansComponent
   },
-  // {
-  //   path: 'personal',
-  //   component: PersonalPlansComponent
-  // },
-  // {
-  //   path: 'enterprise',
-  //   component: EnterprisePlansComponent
-  // },
+  {
+    path: 'payment/:planId',
+    component: PaymentComponent
+  },
+  {
+    path: 'order',
+    component: OrderReviewComponent
+  },
   {
     path: '',
     redirectTo: 'home',

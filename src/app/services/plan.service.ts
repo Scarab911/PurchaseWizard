@@ -23,4 +23,15 @@ export class PlanService {
     this.enterprisePlansList.push(new Plan(6, 'PLAN C','Lifetime', ['Lorem ipsum dolor sit amet','Lorem ipsum dolor sit amet',"Lorem ipsum dolor sit amet","Lorem ipsum dolor sit amet","Lorem ipsum dolor sit amet"], 1500,true));
 
   }
+  public getPlanById(id:number): Plan {
+    const personalPlan = this.personalPlansList.find((obj) => obj.planId == id);
+    if (personalPlan !== undefined) {
+      return personalPlan;
+    }
+    const enterprisePlan = this.enterprisePlansList.find((obj) => obj.planId == id);
+    if (enterprisePlan !== undefined) {
+      return enterprisePlan;
+    }
+    return this.enterprisePlansList[0];
+  }
 }

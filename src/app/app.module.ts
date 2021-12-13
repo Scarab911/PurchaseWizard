@@ -8,6 +8,10 @@ import { AllPlansComponent } from './components/all-plans/all-plans.component';
 import { PlanCardComponent } from './components/plan-card/plan-card.component';
 import { PersonalPlansComponent } from './components/personal-plans/personal-plans.component';
 import { EnterprisePlansComponent } from './components/enterprise-plans/enterprise-plans.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
+import { OrderReviewComponent } from './components/order-review/order-review.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,16 @@ import { EnterprisePlansComponent } from './components/enterprise-plans/enterpri
     AllPlansComponent,
     PlanCardComponent,
     PersonalPlansComponent,
-    EnterprisePlansComponent
+    EnterprisePlansComponent,
+    PaymentComponent,
+    OrderReviewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,381 @@
+<h1>Payment information</h1>
+<div class="container">
+    <form #form="ngForm">
+
+        <div class="inputs">
+            <div class="left column">
+
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text"
+                        name="firstName"
+                        minlength="2"
+                        maxlength="20"
+                        ngModel
+                        #firstName="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="firstName.touched && !firstName.valid">
+                        <div
+                            *ngIf="firstName.errors && firstName.errors['required']">
+                            First
+                            name is
+                            required!</div>
+                        <div
+                            *ngIf="firstName.errors && firstName.errors['minlength']">
+                            First name minimum 2 characters!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text"
+                        name="lastName"
+                        minlength="2"
+                        maxlength="20"
+                        ngModel
+                        #lastName="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="lastName.touched && !lastName.valid">
+                        <div
+                            *ngIf="lastName.errors && lastName.errors['required']">
+                            Last
+                            name is
+                            required!</div>
+                        <div
+                            *ngIf="lastName.errors && lastName.errors['minlength']">
+                            Last name minimum 2 characters!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone number</label>
+                    <input type="tel"
+                        name="phone"
+                        minlength="6"
+                        maxlength="15"
+                        ngModel
+                        #phone="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="phone.touched && !phone.valid">
+                        <div
+                            *ngIf="phone.errors && phone.errors['required']">
+                            Phone number is
+                            required!</div>
+                        <div
+                            *ngIf="phone.errors && phone.errors['minlength']">
+                            Phone minimum 6
+                            characters!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email"
+                        name="email"
+                        minlength="6"
+                        maxlength="30"
+                        ngModel
+                        #email="ngModel"
+                        pattern="\s*(([^<>()[\]\\\/.,;:\s@\\&quot;]+(\.[^<>()[\]\\\/.,;:\s@\\&quot;]+)*)|(\\&quot;.+\\&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s*"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="email.touched && !email.valid">
+                        <div
+                            *ngIf="email.errors && email.errors['required']">
+                            Email is
+                            required!</div>
+                        <div
+                            *ngIf="email.errors && email.errors['minlength']">
+                            Email minimum 6
+                            characters!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group countries">
+                    <label for="countries">Choose a country:</label>
+                    <select name="countries"
+                        id="countries"
+                        name="country"
+                        minlength="6"
+                        maxlength="15"
+                        ngModel
+                        #country="ngModel"
+                        required>
+                        <div class="alert alert-danger"
+                            *ngIf="country.touched && !country.valid">
+                            <div
+                                *ngIf="country.errors && country.errors['required']">
+                                Country is
+                                required!</div>
+                        </div>
+                        <ng-container
+                            *ngFor="let country of countriesList">
+                            <option value="{{country}}"
+                                aria-required="true">{{country}}
+                            </option>
+                        </ng-container>
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="form-group"
+                    *ngIf="form.value.country === 'United States of America'">
+                    <label for="state">State code</label>
+                    <input type="text"
+                        name="state"
+                        minlength="2"
+                        maxlength="3"
+                        ngModel
+                        #state="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="state.touched && !state.valid">
+                        <div
+                            *ngIf="state.errors && state.errors['required']">
+                            State is
+                            required!</div>
+                        <div
+                            *ngIf="state.errors && state.errors['minlength']">
+                            State too short!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text"
+                        name="city"
+                        minlength="3"
+                        maxlength="15"
+                        ngModel
+                        #city="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="city.touched && !city.valid">
+                        <div
+                            *ngIf="city.errors && city.errors['required']">
+                            City is
+                            required!</div>
+                        <div
+                            *ngIf="city.errors && city.errors['minlength']">
+                            City too short!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="street1">Street 1</label>
+                    <input type="text"
+                        name="street1"
+                        minlength="3"
+                        maxlength="15"
+                        ngModel
+                        #street1="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="street1.touched && !street1.valid">
+                        <div
+                            *ngIf="street1.errors && street1.errors['required']">
+                            Street is
+                            required!</div>
+                        <div
+                            *ngIf="street1.errors && street1.errors['minlength']">
+                            Street too short!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="street2">Street 2</label>
+                    <input type="text"
+                        name="street2"
+                        ngModel
+                        #street2="ngModel">
+                </div>
+
+                <div class="form-group">
+                    <label for="zip">Zip Code</label>
+                    <input inputmode="numeric"
+                        (ngModelChange)="isValidZip(form.value.zip)"
+                        name="zip"
+                        minlength="5"
+                        maxlength="10"
+                        ngModel
+                        #zip="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="zip.touched && !zip.valid">
+                        <div
+                            *ngIf="zip.errors && zip.errors['required']">
+                            ZIP is
+                            required!</div>
+                        <div
+                            *ngIf="zip.errors && zip.errors['minlength']">
+                            ZIP too short!
+                        </div>
+                    </div>
+                    <div class="alert alert-danger"
+                        *ngIf="!zipValid">
+                        Only numbers allowed!
+                    </div>
+                </div>
+            </div>
+
+            <div class="right column">
+
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input inputmode="numeric"
+                        (ngModelChange)="detectCardType(form.value.card)"
+                        (ngModelChange)="isValidCard(form.value.card)"
+                        name="card"
+                        minlength="16"
+                        maxlength="16"
+                        ngModel
+                        #card="ngModel"
+                        required>
+                    <div class="alert alert-danger"
+                        *ngIf="card.touched && !card.valid">
+                        <div
+                            *ngIf="card.errors && card.errors['required']">
+                            Card number is
+                            required!</div>
+                        <div
+                            *ngIf="card.errors && card.errors['minlength']">
+                            Card number too short!
+                        </div>
+                    </div>
+                    <div class="alert alert-danger"
+                        *ngIf="!cardValid">
+                        Only numbers allowed!
+                    </div>
+                </div>
+
+                <div class="ctype-cvv-group">
+                    <div class="card-icon">
+
+                        <fa-icon *ngIf="cardType === ''"
+                            [icon]="faCreditCard"></fa-icon>
+                        <img *ngIf="cardType === 'Visa'"
+                            src="https://i5.walmartimages.com/dfw/63fd9f59-18df/ed0b73d0-0bbd-44dc-8dcc-b835c7588ece/v1/wallet-visa-dark-logo.png"
+                            alt="visa">
+                        <img *ngIf="cardType === 'Mastercard'"
+                            src="https://i5.walmartimages.com/dfw/63fd9f59-18df/ed0b73d0-0bbd-44dc-8dcc-b835c7588ece/v1/wallet-master-dark-logo.png"
+                            alt="visa">
+                        <img *ngIf="cardType === 'AmericanExpress'"
+                            src="https://i5.walmartimages.com/dfw/4ff9c6c9-213b/k2-_d4c88659-0d50-4007-9562-22aa7e463fcb.v1.svg"
+                            alt="visa">
+                        <img *ngIf="cardType === 'Discover'"
+                            src="https://i5.walmartimages.com/dfw/63fd9f59-18df/ed0b73d0-0bbd-44dc-8dcc-b835c7588ece/v1/wallet-discover-dark-logo.png"
+                            alt="visa">
+                    </div>
+
+                    <div class="form-group ccv">
+                        <label for="ccv">CCV</label>
+                        <input inputmode="numeric"
+                            (ngModelChange)="isValidCCV(form.value.ccv)"
+                            name="ccv"
+                            minlength="3"
+                            maxlength="3"
+                            ngModel
+                            #ccv="ngModel"
+                            required>
+                    </div>
+                </div>
+                <div class="alert alert-danger"
+                    *ngIf="ccv.touched && !ccv.valid">
+                    <div *ngIf="ccv.errors && ccv.errors['required']">
+                        CCV number is
+                        required!</div>
+                    <div
+                        *ngIf="ccv.errors && ccv.errors['minlength']">
+                        CCV number too short!
+                    </div>
+                </div>
+                <div class="alert alert-danger"
+                    *ngIf="!ccvValid">
+                    Only numbers allowed!
+                </div>
+
+                <div class="expire-date-group">
+
+                    <div class="form-group month">
+                        <label for="exp_month">Month</label>
+                        <input inputmode="numeric"
+                            (ngModelChange)="isValidMonth(form.value.exp_month)"
+                            minlength="1"
+                            maxlength="2"
+                            name="exp_month"
+                            ngModel
+                            #exp_month="ngModel"
+                            required>
+                    </div>
+
+                    <div class="form-group year">
+                        <label for="exp_year">Year</label>
+                        <input inputmode="numeric"
+                            (ngModelChange)="isValidYear(form.value.exp_year)"
+                            minlength="4"
+                            maxlength="4"
+                            name="exp_year"
+                            ngModel
+                            #exp_year="ngModel"
+                            required>
+                    </div>
+                </div>
+
+                <div class="month-year-alerts">
+
+                    <div class="alert alert-danger"
+                        *ngIf="exp_month.touched && !exp_month.valid">
+                        <div
+                            *ngIf="exp_month.errors && exp_month.errors['required']">
+                            Month number is
+                            required!</div>
+                    </div>
+                    <div class="alert alert-danger"
+                        *ngIf="!monthValid">
+                        Only numbers 1-12 allowed!
+                    </div>
+
+                    <div class="alert alert-danger"
+                        *ngIf="exp_year.touched && !exp_year.valid">
+                        <div
+                            *ngIf="exp_year.errors && exp_year.errors['required']">
+                            Year is
+                            required!</div>
+                        <div
+                            *ngIf="exp_year.errors && exp_year.errors['minlength']">
+                            Number too short!
+                        </div>
+                    </div>
+                    <div class="alert alert-danger"
+                        *ngIf="!yearValid">
+                        Only {{year}} and up allowed!
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+            <button type="button"
+                (click)="detectCardType(form.value.card)"
+                (click)="createUser(form)"
+                [routerLink]="['/order']"
+                [disabled]="!form.valid">Review
+                order</button>
+            <button [routerLink]="['/home']">Return</button>
+        </div>
+
+    </form>
+</div>

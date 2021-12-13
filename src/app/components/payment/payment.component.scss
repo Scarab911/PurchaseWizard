@@ -1,0 +1,169 @@
+h1 {
+  text-align: center;
+  word-break: keep-all;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  gap: 25px;
+
+  .inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .column {
+      width: 260px;
+      border-radius: 5px;
+      border: 2px solid grey;
+      outline: solid 1px grey;
+      outline-offset: -5px;
+      height: fit-content;
+      padding: 20px 15px;
+      background-color: rgb(91, 248, 248);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .right {
+      align-self: flex-end;
+
+      .ctype-cvv-group {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+
+        .card-icon {
+          margin-top: 45px;
+          margin-left: 22px;
+
+          fa-icon {
+            width: 35px;
+            height: 23px;
+            font-size: 28px;
+            line-height: 30px;
+          }
+
+          img {
+            width: 35px;
+            height: 23px;
+          }
+        }
+
+        .ccv > input {
+          width: 50%;
+          margin-left: auto;
+          margin-right: 13px;
+        }
+      }
+
+      .expire-date-group {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        gap: 10px;
+
+        .form-group.month > input {
+          width: 70%;
+        }
+        .form-group.year {
+          margin-right: 13px;
+        }
+        .form-group.year > input {
+          width: 100%;
+        }
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+
+      label {
+        line-height: 24px;
+        font-size: 18px;
+      }
+
+      input {
+        width: 180px;
+        border: none;
+        border-radius: 5px;
+        line-height: 24px;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 2px;
+        margin-top: 10px;
+        text-align: center;
+        &:hover {
+          outline: 1px solid aqua;
+          outline-offset: 3px;
+          transition: 0.3s ease;
+        }
+      }
+
+      select {
+        border: none;
+        border-radius: 5px;
+        line-height: 24px;
+        font-size: 18px;
+        width: 180px;
+      }
+    }
+  }
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: yellow;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    width: max-content;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    &:hover {
+      background-color: darkorange;
+      color: #fff;
+      transition: 0.3s ease-out;
+      text-shadow: black 2px 2px 20px;
+      outline: solid 1px #fff;
+    }
+  }
+
+  .alert {
+    width: 100%;
+    border: 1px solid rgb(240, 101, 101);
+    border-radius: 5px;
+    background-color: pink;
+    padding: 2px;
+    line-height: 24px;
+    font-size: 18px;
+    text-align: center;
+    word-break: keep-all;
+    &.alert-danger {
+      background-color: lightcoral;
+      color: darkred;
+    }
+  }
+
+  .form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
+  }
+}
