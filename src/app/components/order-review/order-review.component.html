@@ -1,1 +1,28 @@
-<p>order-review works!</p>
+<div class="container">
+    <h1>Order summary</h1>
+    <table>
+        <tr>
+            <td>Subscription Name</td>
+            <td>{{subName}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{subPrice}}</td>
+        </tr>
+        <tr>
+            <td>Currency</td>
+            <td>EUR</td>
+        </tr>
+        <tr>
+            <td>Card type</td>
+            <td>{{cardType}}</td>
+        </tr>
+        <tr>
+            <td>Card Number</td>
+            <td>{{showCardNumber}}</td>
+        </tr>
+
+    </table>
+    <button (click)="showLoading()">Purchase</button>
+    <loader *ngIf="loading"></loader>
+</div>

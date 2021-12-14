@@ -12,6 +12,8 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { OrderReviewComponent } from './components/order-review/order-review.component';
+import { PurchaseCompleteComponent } from './components/purchase-complete/purchase-complete.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { OrderReviewComponent } from './components/order-review/order-review.com
     EnterprisePlansComponent,
     PaymentComponent,
     OrderReviewComponent,
+    PurchaseCompleteComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

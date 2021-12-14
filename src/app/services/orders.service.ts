@@ -7,7 +7,7 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class OrdersService {
-  private lastOrderData?: OrderData;
+  public lastOrderData?: OrderData;
 
   constructor() { 
     

@@ -86,9 +86,6 @@ export class PaymentComponent implements OnInit {
             this.cardType = key;
         };
     };
-    
-    console.log('krediten:', this.cardType);
-    
   };
 
   public createUser(form: NgForm): void {
@@ -111,7 +108,6 @@ export class PaymentComponent implements OnInit {
         cardType: this.cardType,
     },
     }
-    console.log(this.user);
     this.orderService.getOrderData(this.user, this.planInfo)
   }
 

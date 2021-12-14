@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AllPlansComponent } from './components/all-plans/all-plans.component';
 import { OrderReviewComponent } from './components/order-review/order-review.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { PurchaseCompleteComponent } from './components/purchase-complete/purchase-complete.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'order',
     component: OrderReviewComponent
+  },
+  {
+    path: 'complete',
+    component: PurchaseCompleteComponent
   },
   {
     path: '',
