@@ -3,3 +3,55 @@
   top: calc(50% - 150px);
   left: calc(50% - 150px);
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+
+  table {
+    border: solid 1px grey;
+    padding: 20px;
+    border-radius: 5px;
+
+    td {
+      border-bottom: 1px solid grey;
+      border-right: 1px solid grey;
+      line-height: 28px;
+      font-size: 20px;
+      padding: 5px 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+    tr td:last-child {
+      text-align: center;
+      font-weight: 400;
+      border-right: none;
+    }
+  }
+
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: yellow;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    width: max-content;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    &:hover {
+      background-color: darkorange;
+      color: #fff;
+      transition: 0.3s ease-out;
+      text-shadow: black 2px 2px 20px;
+      outline: solid 1px #fff;
+    }
+  }
+}

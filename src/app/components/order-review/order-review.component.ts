@@ -8,6 +8,7 @@ import { OrdersService } from 'src/app/services/orders.service';
   templateUrl: './order-review.component.html',
   styleUrls: ['./order-review.component.scss']
 })
+
 export class OrderReviewComponent implements OnInit {
   public orderData?: OrderData;
   public showCardNumber: string;
@@ -16,6 +17,7 @@ export class OrderReviewComponent implements OnInit {
   public currency?: number;
   public cardType?: string;
   public loading: boolean;
+
   constructor(private ordersService: OrdersService,
     private router: Router) {
     this.showCardNumber = '************';
@@ -32,14 +34,12 @@ export class OrderReviewComponent implements OnInit {
     const cardNumber = this.orderData?.user.card.cardNumber;
     
     this.showCardNumber = this.showCardNumber+(cardNumber &&cardNumber.toString().slice(12,16))
-
   }
 
   public showLoading(): void {
     this.loading = true;
 
     setTimeout(() => {
-      console.log('showing!!!!');
       this.loading = false;
       this.router.navigate(['/complete']);
     },10000);
