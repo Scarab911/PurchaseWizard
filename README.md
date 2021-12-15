@@ -10,7 +10,15 @@
 
 This project is for testing logics and skills before interview!
 
-Design: self made.
+Design: self made, aqua is my favorite color as you see:)
+
+## Launch project
+
+__After download__
+
+- npm install
+- ng serve 
+- http://localhost:4200
 
 ## Project features
 
