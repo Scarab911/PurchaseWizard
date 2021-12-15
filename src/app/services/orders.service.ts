@@ -9,17 +9,13 @@ import { User } from '../models/user';
 export class OrdersService {
   public lastOrderData?: OrderData;
 
-  constructor() { 
-    
-  }
+  constructor() { }
 
   public getOrderData(user: User, plan: Plan):void{
     this.lastOrderData = {
       user: user,
       plan: plan
     }
-    console.log(this.lastOrderData);
-    
   }
 }
 

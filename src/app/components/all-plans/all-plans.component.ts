@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'all-plans',
@@ -10,7 +9,7 @@ export class AllPlansComponent implements OnInit {
   private enterpriseTab: boolean= false;
   private personalTab: boolean = true;
 
-  constructor(private router: Router) {
+  constructor() {
     
    }
 
@@ -33,13 +32,4 @@ export class AllPlansComponent implements OnInit {
   public get getEnterpriseTab(): boolean {
     return this.enterpriseTab
   };
-  // public isHomeRoute(): boolean {
-  //   return this.router.url === '/'
-  // }
-  // public isPersonalRoute(): boolean {
-  //   return this.router.url === '/personal'
-  // }
-  // public isEnterpriseRoute(): boolean {
-  //   return this.router.url === '/enterprise'
-  // }
 }

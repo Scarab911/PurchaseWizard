@@ -8,7 +8,8 @@ import { PlanService } from 'src/app/services/plan.service';
   styleUrls: ['./personal-plans.component.scss']
 })
 export class PersonalPlansComponent implements OnInit {
-public personalPlans!: Plan [];
+  public personalPlans!: Plan [];
+
   constructor(private planService: PlanService) { }
 
   ngOnInit(): void {

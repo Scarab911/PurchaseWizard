@@ -4,6 +4,7 @@ export class Plan {
         public period: string,
         public consList: string[],
         public price: number,
+        public currency: string,
         public bestOffer?: boolean){
             this.planId = planId;
             this.name = name;

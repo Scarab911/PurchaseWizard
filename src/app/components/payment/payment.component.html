@@ -362,16 +362,13 @@
                     </div>
                 </div>
 
-
             </div>
 
         </div>
 
         <div class="buttons">
             <button type="button"
-                (click)="detectCardType(form.value.card)"
                 (click)="createUser(form)"
-                [routerLink]="['/order']"
                 [disabled]="!form.valid">Review
                 order</button>
             <button [routerLink]="['/home']">Return</button>

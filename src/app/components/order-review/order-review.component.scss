@@ -32,7 +32,10 @@
       border-right: none;
     }
   }
-
+  .buttons {
+    display: flex;
+    gap: 20px;
+  }
   button {
     padding: 10px 15px;
     border: none;

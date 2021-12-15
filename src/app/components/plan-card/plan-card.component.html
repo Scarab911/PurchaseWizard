@@ -9,8 +9,8 @@
         <li *ngFor="let bulet of plan?.consList">{{bulet}}.</li>
     </ul>
 
-    <p>Price: {{plan?.price}} EUR</p>
+    <p>Price: {{plan?.price}} {{plan?.currency}}</p>
     <button [routerLink]="['/payment', plan?.planId]">Pick a plan
-        <fa-icon [icon]="faBeer"></fa-icon>
+        <fa-icon [icon]="faStar"></fa-icon>
     </button>
 </div>

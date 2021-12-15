@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Plan } from 'src/app/models/plan';
 import { User } from 'src/app/models/user';
 import { CountriesService } from 'src/app/services/countries.service';
@@ -33,6 +33,7 @@ export class PaymentComponent implements OnInit {
   public year!: number;
 
   constructor(private route: ActivatedRoute,
+    private router: Router,
      private planService: PlanService,
      private countriesService: CountriesService,
      private orderService: OrdersService) { 
@@ -51,22 +52,15 @@ export class PaymentComponent implements OnInit {
     this.planInfo = this.planService.getPlanById(this.planId);
     
     //get all country names from API to add to select:
-    this.countriesService.getCountries().subscribe((response) => {
-      this.countries = response;
+    this.countriesService.getCountries().subscribe((response:any) => {
+      this.countries = response.countries;
 
-      let salys:any  = {}
-
-      for(let item in this.countries){
-        salys = this.countries[item]
-        break
+      let allCountries = [];
+      for(let country in this.countries){
+        allCountries.push(this.countries[country]);
       };
 
-      let allCountries = []
-      for(let x in salys){
-        allCountries.push(salys[x]);
-      }
-
-      allCountries.push('Lithuania')
+      allCountries.push('Lithuania');
       this.countriesList = allCountries.sort();
     });
   }
@@ -89,6 +83,22 @@ export class PaymentComponent implements OnInit {
   };
 
   public createUser(form: NgForm): void {
+    if(!this.cardValid){ 
+      alert('Card number is invalid!');
+      return
+    };
+
+    if(!this.ccvValid){ 
+      alert('CCV number is invalid!');
+      return
+    };
+
+    if(!this.isValidEmail(form.value.email)){ 
+      alert('Wrong email entered!');
+      return
+    };
+
+
     this.user = {
     firstName: form.value.firstName,
     lastName: form.value.lastName,
@@ -108,7 +118,8 @@ export class PaymentComponent implements OnInit {
         cardType: this.cardType,
     },
     }
-    this.orderService.getOrderData(this.user, this.planInfo)
+    this.orderService.getOrderData(this.user, this.planInfo);
+    this.router.navigate(['/order']);
   }
 
   public isValidCard(cardNumber:string): void {
@@ -178,14 +189,27 @@ export class PaymentComponent implements OnInit {
     this.zipValid = true;
   }
 
-  // public isValidForm(): void {
-
-  // }
-    
-  log(x:any){
-    console.log(x);
-    
+  private isValidEmail(email:string) {
+        if (typeof email !== 'string' ||
+            email.length < 6 ||
+            email.indexOf('@') === -1 || //reiskia @ stringe nerasta(-1)
+            email[0] === '@' ||         // pirma string reiksme yra@
+            email.slice(-4).indexOf('@') > -1 || //paima 4 pskutinius email simbolius ir iesko @
+            this.countSimbols(email, '@') > 1) { //tikrina kiek stringe yra atitinkamu simboliu!
+            return false;
+        }
+        return true;
   }
 
-  
+  private countSimbols(text: string, letter:string) {
+        let count = 0;
+
+        for (const t of text) {
+            if (t === letter) {
+                count++;
+            }
+        }
+
+        return count;
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { OrderData } from 'src/app/models/orderData';
 import { OrdersService } from 'src/app/services/orders.service';
 
@@ -14,7 +14,7 @@ export class OrderReviewComponent implements OnInit {
   public showCardNumber: string;
   public subName?: string;
   public subPrice?: number;
-  public currency?: number;
+  public currency?: string;
   public cardType?: string;
   public loading: boolean;
 
@@ -27,9 +27,11 @@ export class OrderReviewComponent implements OnInit {
   ngOnInit(): void {
     //getting order info
     this.orderData = this.ordersService.lastOrderData
+    
     //getting needed order data:
     this.subName = this.ordersService.lastOrderData?.plan.name;
     this.subPrice = this.ordersService.lastOrderData?.plan.price;
+    this.currency = this.ordersService.lastOrderData?.plan.currency;
     this.cardType = this.ordersService.lastOrderData?.user.card.cardType
     const cardNumber = this.orderData?.user.card.cardNumber;
     

@@ -11,7 +11,7 @@
         </tr>
         <tr>
             <td>Currency</td>
-            <td>EUR</td>
+            <td>{{currency}}</td>
         </tr>
         <tr>
             <td>Card type</td>
@@ -23,6 +23,9 @@
         </tr>
 
     </table>
-    <button (click)="showLoading()">Purchase</button>
+    <div class="buttons">
+        <button (click)="showLoading()">Purchase</button>
+        <button [routerLink]="['/home']">Home</button>
+    </div>
     <loader *ngIf="loading"></loader>
 </div>
